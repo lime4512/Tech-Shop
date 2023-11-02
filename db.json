@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "email": "lime4512@mail.ru",
+      "password": "$2a$10$h4F3lT5MUuGa9k2xmaXGd.GdZK5iT4W74FgDBRk86YD4LZ6bb/kSC",
+      "id": 1
+    },
+    {
+      "email": "lime45132@mail.ru",
+      "password": "$2a$10$I39GgwipeypI4d4bG1Hidul9mUN6R9wkFsVDrJuGRn/nnj5DimeNK",
+      "id": 2
+    },
+    {
+      "email": "lime451552@mail.ru",
+      "password": "$2a$10$sM0Wz3yJmH3pQfrNBej8C.N8QvuhrIPCu0WIP3AKGvxuQI0XFqSt.",
+      "id": 3
+    },
+    {
+      "email": "lime451662@mail.ru",
+      "password": "$2a$10$w0H7OqGjljKZbuCduL6PTO9jslyeVJnkeEcOuaMRNQRgD3TqvXjZa",
+      "id": 4
+    },
+    {
+      "email": "lime45423412@mail.ru",
+      "password": "$2a$10$Vf2thWuTq3188mweQforleM.9y7CL5KwU76ke9HszFodJF2Vb3UoK",
+      "id": 5
+    },
+    {
+      "email": "lime4123123123512@mail.ru",
+      "password": "$2a$10$eFZXt6g2EyCDFaDoxNW.j.aMgeBq/viZwH3EUlOJq6RagNwSc/YOy",
+      "id": 6
+    },
+    {
+      "email": "lime4512342342342@mail.ru",
+      "password": "$2a$10$GbFNUczgkwxgXdN634Vi..u8FcLDwA6naR1SxJQzOnkD6DaLRpwXi",
+      "id": 7
+    },
+    {
+      "email": "lime45123@mail.ru",
+      "password": "$2a$10$DnxjDQCD8vyXurpUVkdKwe0BBXRFRRy73C1V5nFC8/MkQjCj4A34u",
+      "id": 8
+    },
+    {
+      "email": "lime451212@mail.ru",
+      "password": "$2a$10$2BiebYXvkblvrKVhjhdA5u32x/3IzCBQFe8RiZTj8FJr2P/T8B8W2",
+      "name": "lime4512",
+      "id": 9
+    },
+    {
+      "email": "bob@mail.ru",
+      "password": "$2a$10$N6bzMhDyMnCr3YHJVieY.O.xZE07N9kRHOiY/lB4h87fA/Ipb2jdO",
+      "name": "bob",
+      "id": 10
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+.item-list-content {
+	border-radius: 8px;
+	background: #191919;
+	text-align: center;
+	padding: 23px;
+}
+
+.items-list {
+	display: flex;
+	justify-content: center;
+	padding: 0;
+	max-width: 1290px;
+}
+
+.items-list li {
+	margin-right: 20px;
+}
+.items-list li:last-child {
+	margin-right: 0px;
+}
+
+.IL-title {
+	color: #fff;
+	font-size: 25px;
+	font-weight: 700;
+	margin-bottom: 24px;
+}

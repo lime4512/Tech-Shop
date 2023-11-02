@@ -1,0 +1,80 @@
+.price {
+	display: flex;
+	align-items: center;
+}
+.img-item {
+	border-radius: 8px 8px 0 0;
+}
+
+.price-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.item {
+	border-radius: 8px;
+	background: #212123;
+}
+
+.name-item {
+	text-align: left;
+	padding: 12px;
+}
+
+.title-item {
+	color: #fff;
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+.subtitle-item {
+	color: #b8b8b8;
+	font-size: 12px;
+	margin-bottom: 28px;
+}
+
+.total-price-item {
+	color: #6c3eb8;
+	font-size: 20px;
+	font-weight: 700;
+	margin-right: 5px;
+}
+
+.cross-price-item {
+	color: #576067;
+	font-size: 13px;
+	text-decoration: line-through;
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px; /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Support for IE. */
+	font-feature-settings: 'liga';
+}
+
+.card {
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+.card:hover {
+	color: #8b57c6;
+}
