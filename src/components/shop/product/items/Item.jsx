@@ -8,7 +8,7 @@ const Item = props => {
 		<li className='item-li'>
 			<div className='item'>
 				<img
-					src={'./hits-img/' + props.itemData.img}
+					src={'./' + props.itemData.img}
 					alt=''
 					className='img-item'
 				/>

@@ -20,7 +20,7 @@ const Cart = () => {
 							<li key={item.id} className='cart-item-list'>
 								<div className='cart-item-name'>
 									<img
-										src={'./hits-img/' + item.img}
+										src={'./' + item.img}
 										alt=''
 										className='img-cart-item'
 										width='160'

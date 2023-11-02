@@ -3,16 +3,16 @@ import Banner from './banner/Banner'
 import Header from './header/Header'
 import Product from './product/Product'
 
-import dataHits from './data/Data-hits.js'
+import data from './data/Data.js'
 
 const MainShop = () => {
-	const { productHits } = dataHits
+	const { productHits, productTelephone } = data
 	return (
 		<div>
 			<Header />
 			<Banner />
-			<Product product={productHits} />
-			<Product product={productHits} />
+			<Product product={productHits} totalTitle='Хиты продаж' />
+			<Product product={productTelephone} totalTitle='Смартфоны' />
 		</div>
 	)
 }
