@@ -1,0 +1,26 @@
+.minBanner-container {
+	border-radius: 8px;
+	background: #191919;
+	padding: 25px;
+	margin-bottom: 20px;
+	display: flex;
+	gap: 10px;
+}
+
+.minBanner-img-small {
+	display: flex;
+	gap: 20px;
+}
+
+.minBanner-total-img,
+.minBanner-img-small {
+	width: 50%;
+}
+
+.minBanner-img {
+	border-radius: 20px;
+}
+
+.img-large {
+	height: 100%;
+}

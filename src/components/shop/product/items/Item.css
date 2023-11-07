@@ -78,3 +78,8 @@
 .card:hover {
 	color: #8b57c6;
 }
+
+.is-not-product {
+	display: block;
+	font-size: 10px;
+}

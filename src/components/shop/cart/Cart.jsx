@@ -17,7 +17,7 @@ const Cart = () => {
 						<h1 className='cart-title-content'>В корзине пусто</h1>
 					) : (
 						cart.map(item => (
-							<li key={item.id} className='cart-item-list'>
+							<li key={item.cartId} className='cart-item-list'>
 								<div className='cart-item-name'>
 									<img
 										src={'./' + item.img}
@@ -33,7 +33,10 @@ const Cart = () => {
 								</div>
 								<div className='cart-item-remove-price'>
 									<h3 className='cart-price'>{item.price}₽</h3>
-									<div className='cart-remove' onClick={() => delCart(item.id)}>
+									<div
+										className='cart-remove'
+										onClick={() => delCart(item.cartId)}
+									>
 										<img src={img} alt='' />
 									</div>
 								</div>
@@ -44,7 +47,13 @@ const Cart = () => {
 				<div className='cart-total'>
 					<h2 className='cart-total-price'>
 						Общая цена заказа:
-						<span> {cart.reduce((acc, rec) => acc + rec.price, 0)}</span>
+						<span>
+							{' '}
+							{cart.reduce(
+								(acc, rec) => acc + Number(rec.price.split('.').join('')),
+								0
+							)}
+						</span>
 					</h2>
 					<button className='cart-btn'>Оплата</button>
 				</div>

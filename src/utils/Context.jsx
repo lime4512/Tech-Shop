@@ -5,20 +5,16 @@ export const Context = props => {
 		email: '',
 	})
 
-	useEffect(() => {
-		if (localStorage.getItem('user') != null) {
-			setUser(JSON.parse(localStorage.getItem('user')))
-		}
-	}, [])
-
 	const [cart, setCart] = useState([])
 
+	
 	const addCart = product => {
+		console.log(typeof product)
 		setCart(item => [...item, product])
 	}
 
-	const delCart = (id) =>{
-		setCart(item => item.filter(item=>item.id !== id))
+	const delCart = id => {
+		setCart(item => item.filter(item => item.cartId !== id))
 	}
 
 	const value = {
@@ -28,6 +24,22 @@ export const Context = props => {
 		cart,
 		delCart,
 	}
+
+	useEffect(() => {
+		if (localStorage.getItem('user') != null) {
+			setUser(JSON.parse(localStorage.getItem('user')))
+		}
+	}, [])
+
+	useEffect(() => {
+		if (localStorage.getItem('cart') != null) {
+			setCart(JSON.parse(localStorage.getItem('cart')))
+		}
+	}, [])
+
+	useEffect(() => {
+		localStorage.setItem('cart', JSON.stringify(cart))
+	}, [cart])
 	return (
 		<CustomContext.Provider value={value}>
 			{props.children}
