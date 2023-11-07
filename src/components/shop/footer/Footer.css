@@ -5,6 +5,7 @@ footer {
 	margin-bottom: 20px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .logo-name-footer {
@@ -25,4 +26,18 @@ footer {
 
 .footer-text span {
 	color: #6c3eb8;
+}
+
+.footer-nav-list {
+	display: flex;
+	margin: 0px;
+}
+
+.footer-nav-list li {
+	width: 30px;
+	margin-right: 8px;
+}
+
+.footer-nav-list li:last-child {
+	margin-right: 0px;
 }
