@@ -7,9 +7,7 @@ export const Context = props => {
 
 	const [cart, setCart] = useState([])
 
-	
 	const addCart = product => {
-		console.log(typeof product)
 		setCart(item => [...item, product])
 	}
 

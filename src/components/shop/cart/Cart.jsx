@@ -1,11 +1,18 @@
 import Header from '../header/Header'
 import './Cart.css'
 import { CustomContext } from '../../../utils/Context'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import img from './392517_close_delete_remove_icon 1.png'
+
 const Cart = () => {
 	const { cart, delCart } = useContext(CustomContext)
+	const [message, setMessage] = useState('')
 
+	const sendingCartHandler = async () => {
+		setMessage('Привет бот')
+		const url = `https://api.telegram.org/bot6846422910:AAHv577QfNTnh48nAUNzJQXV4C4JUWBlujY/sendMessage?chat_id=-1002124516519&text=${message}`
+		await fetch(url)
+	}
 	console.log(cart)
 	return (
 		<div className='cart'>
@@ -55,7 +62,9 @@ const Cart = () => {
 							)}
 						</span>
 					</h2>
-					<button className='cart-btn'>Оплата</button>
+					<button className='cart-btn' onClick={sendingCartHandler}>
+						Оплата
+					</button>
 				</div>
 			</div>
 		</div>
