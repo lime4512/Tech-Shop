@@ -1,19 +1,33 @@
 import Header from '../header/Header'
 import './Cart.css'
 import { CustomContext } from '../../../utils/Context'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import img from './392517_close_delete_remove_icon 1.png'
 
 const Cart = () => {
 	const { cart, delCart } = useContext(CustomContext)
 	const [message, setMessage] = useState('')
 
-	const sendingCartHandler = async () => {
-		setMessage('Привет бот')
-		const url = `https://api.telegram.org/bot6846422910:AAHv577QfNTnh48nAUNzJQXV4C4JUWBlujY/sendMessage?chat_id=-1002124516519&text=${message}`
-		await fetch(url)
+	const sendingCartHandler = () => {
+		setMessage(
+			`Список заказанных устройств: \n${cart
+				.map(
+					item => `${item.title} - \n цена ${item.price.split('.').join('')}\n, `
+				)
+				.join('')}`
+		)
 	}
-	console.log(cart)
+
+	useEffect(() => {
+		if (message !== '') {
+			const sendingCart = async () => {
+				const url = `https://api.telegram.org/bot6846422910:AAHv577QfNTnh48nAUNzJQXV4C4JUWBlujY/sendMessage?chat_id=-1002124516519&text=${message}`
+				await fetch(url)
+			}
+			sendingCart()
+		}
+	}, [message])
+
 	return (
 		<div className='cart'>
 			<Header />
