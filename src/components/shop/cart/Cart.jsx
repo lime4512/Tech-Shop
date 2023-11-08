@@ -3,10 +3,12 @@ import './Cart.css'
 import { CustomContext } from '../../../utils/Context'
 import { useContext, useEffect, useState } from 'react'
 import img from './392517_close_delete_remove_icon 1.png'
+import ModalData from './modalData/ModalData'
 
 const Cart = () => {
 	const { cart, delCart } = useContext(CustomContext)
 	const [message, setMessage] = useState('')
+	const [modalIsOpen, setModalIsOpen] = useState(false)
 
 	const sendingCartHandler = () => {
 		setMessage(
@@ -19,6 +21,7 @@ const Cart = () => {
 				0
 			)}`
 		)
+		setModalIsOpen(true)
 	}
 
 	useEffect(() => {
@@ -95,6 +98,7 @@ const Cart = () => {
 						Оформление заказа
 					</button>
 				</div>
+				<ModalData IsOpen={modalIsOpen} IsClose={() => setModalIsOpen(false)} />
 			</div>
 		</div>
 	)
