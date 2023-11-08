@@ -12,17 +12,32 @@ const Cart = () => {
 		setMessage(
 			`Список заказанных устройств: \n${cart
 				.map(
-					item => `${item.title} - \n цена ${item.price.split('.').join('')}\n, `
+					item => `${item.title} - \nцена ${item.price.split('.').join('')}, \n`
 				)
-				.join('')}`
+				.join('')}\n Общая цена заказа ${cart.reduce(
+				(acc, rec) => acc + Number(rec.price.split('.').join('')),
+				0
+			)}`
 		)
 	}
 
 	useEffect(() => {
 		if (message !== '') {
+			const TOTAL_URL =
+				'https://api.telegram.org/bot6846422910:AAHv577QfNTnh48nAUNzJQXV4C4JUWBlujY/sendMessage'
 			const sendingCart = async () => {
-				const url = `https://api.telegram.org/bot6846422910:AAHv577QfNTnh48nAUNzJQXV4C4JUWBlujY/sendMessage?chat_id=-1002124516519&text=${message}`
-				await fetch(url)
+				const response = await fetch(TOTAL_URL, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						chat_id: '-1002124516519&text',
+						text: message,
+						parse_mode: 'html',
+					}),
+				})
+				await response.json()
 			}
 			sendingCart()
 		}
@@ -77,7 +92,7 @@ const Cart = () => {
 						</span>
 					</h2>
 					<button className='cart-btn' onClick={sendingCartHandler}>
-						Оплата
+						Оформление заказа
 					</button>
 				</div>
 			</div>
