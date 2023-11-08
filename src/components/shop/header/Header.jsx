@@ -12,6 +12,11 @@ const Header = () => {
 			email: '',
 		})
 		localStorage.removeItem('user')
+		localStorage.removeItem('cart')
+	}
+
+	const removeLocalStorage = () => {
+		localStorage.removeItem('cart')
 	}
 	return (
 		<header>
@@ -51,7 +56,11 @@ const Header = () => {
 									<div className='icon'>
 										<span className='material-icons-user'>perm_identity</span>
 									</div>
-									<a className='user-name user-login' href='/login'>
+									<a
+										className='user-name user-login'
+										href='/login'
+										onClick={removeLocalStorage}
+									>
 										Вход
 									</a>
 								</div>
