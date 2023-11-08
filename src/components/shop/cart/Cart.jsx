@@ -1,7 +1,7 @@
 import Header from '../header/Header'
 import './Cart.css'
 import { CustomContext } from '../../../utils/Context'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import img from './392517_close_delete_remove_icon 1.png'
 import ModalData from './modalData/ModalData'
 
@@ -23,28 +23,6 @@ const Cart = () => {
 		)
 		setModalIsOpen(true)
 	}
-
-	useEffect(() => {
-		if (message !== '') {
-			const TOTAL_URL =
-				'https://api.telegram.org/bot6846422910:AAHv577QfNTnh48nAUNzJQXV4C4JUWBlujY/sendMessage'
-			const sendingCart = async () => {
-				const response = await fetch(TOTAL_URL, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						chat_id: '-1002124516519&text',
-						text: message,
-						parse_mode: 'html',
-					}),
-				})
-				await response.json()
-			}
-			sendingCart()
-		}
-	}, [message])
 
 	return (
 		<div className='cart'>
@@ -98,7 +76,11 @@ const Cart = () => {
 						Оформление заказа
 					</button>
 				</div>
-				<ModalData IsOpen={modalIsOpen} IsClose={() => setModalIsOpen(false)} />
+				<ModalData
+					IsOpen={modalIsOpen}
+					IsClose={() => setModalIsOpen(false)}
+					message={message}
+				/>
 			</div>
 		</div>
 	)

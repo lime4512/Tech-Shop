@@ -8,7 +8,7 @@
 
 	overflow: hidden;
 	overflow-y: auto;
-	transition: opacity 0.2s;
+	transition: opacity 0.3s;
 	z-index: 999;
 }
 
@@ -51,4 +51,20 @@
 
 .modal-close-button:hover {
 	background: #5a5a5a;
+}
+
+.modal-comment-data textarea {
+	resize: none;
+	width: 70%;
+	height: 70px;
+}
+
+.modal-input {
+	display: block;
+	width: 50%;
+	margin-bottom: 5px;
+}
+
+.modal-treatment-data {
+	display: flex;
 }
