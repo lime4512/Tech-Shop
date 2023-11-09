@@ -7,6 +7,9 @@ import ModalData from './modalData/ModalData'
 import * as React from 'react'
 import Snackbar from '@mui/material/Snackbar'
 import MuiAlert from '@mui/material/Alert'
+import Button from '@mui/material/Button'
+import DeleteIcon from '@mui/icons-material/Delete'
+import { deepPurple } from '@mui/material/colors'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />
@@ -17,6 +20,10 @@ const Cart = () => {
 	const [message, setMessage] = useState('')
 	const [modalIsOpen, setModalIsOpen] = useState(false)
 	const [notificationMessage, setNotificationMessage] = useState(false)
+
+	const removeCartHandler = () => {
+		cart.map(item => delCart(item.cartId))
+	}
 
 	const notificationHandler = bool => {
 		setNotificationMessage(bool)
@@ -92,9 +99,21 @@ const Cart = () => {
 							)}
 						</span>
 					</h2>
-					<button className='cart-btn' onClick={sendingCartHandler}>
-						Оформление заказа
-					</button>
+					<div className='button-list'>
+						<Button
+							onClick={removeCartHandler}
+							variant='text'
+							startIcon={<DeleteIcon />}
+							sx={{
+								color: deepPurple[500],
+							}}
+						>
+							Delete
+						</Button>
+						<button className='cart-btn' onClick={sendingCartHandler}>
+							Оформление заказа
+						</button>
+					</div>
 				</div>
 				<ModalData
 					IsOpen={modalIsOpen}

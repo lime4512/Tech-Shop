@@ -35,7 +35,10 @@
 	font-size: 20px;
 	cursor: pointer;
 	transition: 0.4s;
+	margin-left: 10px;
 }
+
+
 
 .cart-btn:hover {
 	background: #462e6d;
@@ -92,4 +95,8 @@
 
 .cart-price {
 	margin-right: 15px;
+}
+
+.button-list {
+	display: flex;
 }
