@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import imgClose from './icon-close.svg'
 import './ModalData.css'
+import Checkbox from '@mui/material/Checkbox'
+import { deepPurple } from '@mui/material/colors'
 
 const ModalData = props => {
 	const [name, setName] = useState('')
@@ -96,9 +98,9 @@ const ModalData = props => {
 							>
 								<img src={imgClose} alt='' className='modal-close-img' />
 							</button>
-							<h1>Оформление заказа:</h1>
+							<h1 className='modal-title'>Оформление заказа</h1>
 							<div className='modal-contact-data'>
-								<h3>1. Контактные данные</h3>
+								<h3 className='modal-subtitle'>1. Контактные данные</h3>
 								<input
 									type='text'
 									placeholder='Имя'
@@ -122,7 +124,7 @@ const ModalData = props => {
 								/>
 							</div>
 							<div className='modal-delivery-data'>
-								<h3>2. Доставка</h3>
+								<h3 className='modal-subtitle'>2. Доставка</h3>
 								<input
 									type='text'
 									placeholder='Город'
@@ -146,20 +148,32 @@ const ModalData = props => {
 								/>
 							</div>
 							<div className='modal-comment-data'>
-								<h3>3. Комментарий к доставке*</h3>
+								<h3 className='modal-subtitle'>3. Комментарий к доставке*</h3>
 								<textarea
 									type='text'
 									placeholder='Комментарий'
 									value={comment}
 									onChange={commentHandler}
+									className='modal-comment'
 								/>
 							</div>
 							<div className='modal-treatment-data'>
-								<p>Я согласен на обработку моих перс. данных</p>
-								<input type='checkbox' />
+								<p className='modal-subtitle'>
+									Я согласен на обработку моих перс. данных
+								</p>
+								<Checkbox
+									sx={{
+										color: deepPurple[500],
+										'&.Mui-checked': {
+											color: deepPurple[600],
+										},
+									}}
+								/>
 							</div>
 							{name && email && telephone && city && street && home && (
-								<button onClick={messageSendingHandler}>Оформить заказ</button>
+								<button onClick={messageSendingHandler} className='modal-btn'>
+									Оформить заказ
+								</button>
 							)}
 						</div>
 					</div>
