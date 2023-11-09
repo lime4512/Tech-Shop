@@ -4,12 +4,23 @@ import { CustomContext } from '../../../utils/Context'
 import { useContext, useState } from 'react'
 import img from './392517_close_delete_remove_icon 1.png'
 import ModalData from './modalData/ModalData'
+import * as React from 'react'
+import Snackbar from '@mui/material/Snackbar'
+import MuiAlert from '@mui/material/Alert'
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+	return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />
+})
 
 const Cart = () => {
 	const { cart, delCart } = useContext(CustomContext)
 	const [message, setMessage] = useState('')
 	const [modalIsOpen, setModalIsOpen] = useState(false)
+	const [notificationMessage, setNotificationMessage] = useState(false)
 
+	const notificationHandler = bool => {
+		setNotificationMessage(bool)
+	}
 	const sendingCartHandler = () => {
 		setMessage(
 			`Список заказанных устройств: \n${cart
@@ -22,6 +33,14 @@ const Cart = () => {
 			)}`
 		)
 		setModalIsOpen(true)
+	}
+
+	const handleClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return
+		}
+
+		setNotificationMessage(false)
 	}
 
 	return (
@@ -80,8 +99,19 @@ const Cart = () => {
 					IsOpen={modalIsOpen}
 					IsClose={() => setModalIsOpen(false)}
 					message={message}
+					notification={notificationHandler}
 				/>
 			</div>
+
+			<Snackbar
+				open={notificationMessage}
+				autoHideDuration={6000}
+				onClose={handleClose}
+			>
+				<Alert onClose={handleClose} severity='success' sx={{ width: '100%' }}>
+					Данные успешно отправлены
+				</Alert>
+			</Snackbar>
 		</div>
 	)
 }

@@ -48,13 +48,18 @@ const ModalData = props => {
 	const [messageModal, setMessageModal] = useState('')
 
 	const messageSendingHandler = () => {
+		props.notification(true)
 		const messagePersonalDate = `Имя заказчика: ${name} 
 		Номер телефона: ${telephone}
 		Почта: ${email} 
 		Адрес доставки: ${city}, ${street}, ${home},
 		Комментарий: ${comment}\n`
+		const numberOrder = Math.floor(Math.random() * 10001)
+		setMessageModal(
+			`Уникальный номер заказа: ${numberOrder}\n${messagePersonalDate}\n${props.message}`
+		)
 
-		setMessageModal(`${messagePersonalDate}\n ${props.message}`)
+		props.IsClose()
 	}
 
 	useEffect(() => {
