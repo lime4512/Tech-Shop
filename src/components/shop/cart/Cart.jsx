@@ -20,6 +20,7 @@ const Cart = () => {
 
 	const notificationHandler = bool => {
 		setNotificationMessage(bool)
+		cart.map(item => delCart(item.cartId))
 	}
 	const sendingCartHandler = () => {
 		setMessage(
