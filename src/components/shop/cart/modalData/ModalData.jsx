@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+
 import imgClose from './icon-close.svg'
 import './ModalData.css'
 import Checkbox from '@mui/material/Checkbox'
@@ -54,7 +55,7 @@ const ModalData = props => {
 		const messagePersonalDate = `Имя заказчика: ${name} 
 		Номер телефона: ${telephone}
 		Почта: ${email} 
-		Адрес доставки: ${city}, ${street}, ${home},
+		Адрес доставки: ${city}, ${street}, ${home}
 		Комментарий: ${comment}\n`
 		const numberOrder = Math.floor(Math.random() * 10001)
 		setMessageModal(

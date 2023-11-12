@@ -117,3 +117,10 @@
 	/* Support for IE. */
 	font-feature-settings: 'liga';
 }
+
+.all-cart {
+	background-color: #8b57c6;
+	color: white;
+	padding: 1px 5px;
+	border-radius: 10px;
+}

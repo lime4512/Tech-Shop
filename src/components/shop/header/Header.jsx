@@ -5,7 +5,7 @@ import { CustomContext } from '../../../utils/Context'
 import { useNavigate } from 'react-router-dom'
 const Header = () => {
 	const navigate = useNavigate()
-	const { user, setUser } = useContext(CustomContext)
+	const { user, setUser, cart } = useContext(CustomContext)
 	console.log(user)
 	const logOutUser = () => {
 		setUser({
@@ -47,6 +47,7 @@ const Header = () => {
 								>
 									<span href='/cart'>shopping_cart</span>
 								</div>
+								{cart.length >0 && <div className='all-cart'>{cart.length}</div>}
 							</div>
 						</div>
 					) : (

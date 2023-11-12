@@ -99,21 +99,25 @@ const Cart = () => {
 							)}
 						</span>
 					</h2>
-					<div className='button-list'>
-						<Button
-							onClick={removeCartHandler}
-							variant='text'
-							startIcon={<DeleteIcon />}
-							sx={{
-								color: deepPurple[500],
-							}}
-						>
-							Delete
-						</Button>
-						<button className='cart-btn' onClick={sendingCartHandler}>
-							Оформление заказа
-						</button>
-					</div>
+					{cart.length > 0 ? (
+						<div className='button-list'>
+							<Button
+								onClick={removeCartHandler}
+								variant='text'
+								startIcon={<DeleteIcon />}
+								sx={{
+									color: deepPurple[500],
+								}}
+							>
+								Delete
+							</Button>
+							<button className='cart-btn' onClick={sendingCartHandler}>
+								Оформление заказа
+							</button>
+						</div>
+					) : (
+						<div>Добавьте товар в корзину</div>
+					)}
 				</div>
 				<ModalData
 					IsOpen={modalIsOpen}
